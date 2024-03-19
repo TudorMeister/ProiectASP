@@ -1,0 +1,72 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    --gradient-body: radial-gradient(farthest-corner at 500px 500px, transparent 0, #faf4e9);
+    margin-bottom: 60px;
+    background-image: var(--gradient-body), url("Resurse/bg.jpg");
+    background-size: 1920px;
+    background-attachment: fixed;
+}
+
+.note-editor .dropdown-toggle::after {
+    display: none;
+}
+
+li a:hover{
+  transform: scale(1.1, 1.1);
+  transition: 0.2s linear;
+}
+
+#titlu
+{
+  font-family: "Roboto", serif;
+  color: rgb(35, 35, 35);
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#skibidi{
+  background-color: #faf4e9;
+  background: linear-gradient(90deg, #fbe8bca5 0%, #faf4e9 50%, #fbe8bca5 100%);
+  position:fixed;
+  width:100%;
+  z-index: 200;
+  break-after: auto;
+}
+
+#butonNav:hover{
+  color:#6D8CB3;
+}
+
+#ArticleTitle{
+  background-color: #E8F0FA;
+  color: rgb(63, 63, 63);
+}
+
+#Buton{
+  background-color: #6D8CB3;
+  border-color:#6D8CB3;
+}
+
+#Buton:active{
+  background-color: #6D8CB3;
+  border-color:#000000;
+}
+
+#Data{
+  background-color: #E8F0FA;
+  color:#6D8CB3;
+}

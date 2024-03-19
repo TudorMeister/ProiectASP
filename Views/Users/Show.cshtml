@@ -1,0 +1,57 @@
+﻿@model ProiectASP.Models.ApplicationUser
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+@* Afisarea unei categorii *@
+
+
+<br />
+
+<div class="card">
+
+    <div class="card">
+        <div style="font-size:150%;"><i class="bi bi-globe"></i> @Model.UserName</div>
+
+        <div style="font-size:150%;"> @ViewBag.Role</div>
+
+    </div>
+
+    @if (User.IsInRole("Admin"))
+    {
+
+            <div class="d-flex flex-row justify-content-between p-3 border-1 border-top">
+
+            <a id="Buton" class="btn btn-success" href="/Users/Edit/@Model.Id">Editeaza user</a>
+
+            <form method="post" action="/Users/Delete/@Model.Id">
+
+                <button class="btn btn-danger" type="submit">Sterge user</button>
+
+            </form>
+
+            <form method="post" action="/Users/ChangeRole/@Model?IdUser=@Model.Id&RoleId=2c5e174e-3b0e-446f-86af-483d56fd7212">
+
+                <button class="btn btn-danger" type="submit">Schimba in user</button>
+
+            </form>
+
+            <form method="post" action="/Users/ChangeRole/@Model?IdUser=@Model.Id&RoleId=2c5e174e-3b0e-446f-86af-483d56fd7211">
+
+                <button class="btn btn-danger" type="submit">Schimba in editor</button>
+
+            </form>
+
+            <form method="post" action="/Users/ChangeRole/@Model?IdUser=@Model.Id&RoleId=2c5e174e-3b0e-446f-86af-483d56fd7210">
+
+                <button class="btn btn-danger" type="submit">Schimba in admin</button>
+
+            </form>
+
+        </div>
+    }
+
+</div>

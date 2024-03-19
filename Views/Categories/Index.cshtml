@@ -1,0 +1,7 @@
+﻿@model ProiectASP.Models.Category 
+@{ ViewBag.Title = "Index"; } <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2>Afisare categorii</h2> <br /> @if (ViewBag.Message != null) { <h2 class="alert-success p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2> } <br /> @foreach (ProiectASP.Models.Category category in ViewBag.Categories) { <div class="card"> <div style="font-size:200%;"><i class="bi bi-globe"></i> @category.CategoryName</div> @if (User.IsInRole("Admin")) { <a id="Buton" class="btn btn-success" href="/Categories/Show/@category.Id">Afisare categorie</a> <br/> } <a id="Buton" class="btn btn-success" href="/Categories/ArataArticole/@category.Id">Vezi articole</a> </div> <br /> <br /> }

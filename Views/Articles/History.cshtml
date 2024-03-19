@@ -1,0 +1,40 @@
+﻿<br/>
+<br />
+<br />
+<br />
+<br />
+
+
+
+<h2>@ViewBag.ArticlesHistory.Count</h2>
+
+<br />
+
+@foreach (ProiectASP.Models.History history in ViewBag.ArticlesHistory)
+{
+    <div class="card">
+        <div class="card-body">
+
+            <!--<h3 class="card-title alert-success py-3 px-3 rounded-2">article.Title</h3>-->
+
+            <div class="card-text">@Html.Raw(history.Content)</div>
+               
+
+        </div>
+
+        <br />
+
+        <h4>&nbsp @history.Id</h4>
+
+
+        <form method="post" action="/Articles/Revert/@history?Id=@history.Id&ArticleId=@history.ArticleId">
+
+            <button id="Buton" class="btn btn-succes" type="submit" style="color:white">Revert</button>
+
+        </form>
+
+    </div>
+
+    <br />
+    <br />
+}

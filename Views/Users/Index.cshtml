@@ -1,0 +1,36 @@
+﻿@model ProiectASP.Models.ApplicationUser
+<br />
+<br />
+<br />
+<br />
+<br />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Afisare useri</h2>
+<br />
+@if (ViewBag.Message != null)
+{
+        <h2 class="alert-success p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+}
+<br />
+
+
+@foreach (ProiectASP.Models.ApplicationUser user in ViewBag.Users)
+{
+        <div class="card">
+            <div><i class="bi bi-globe"></i> @user.UserName</div>
+
+        @if (User.IsInRole("Admin"))
+        {
+
+            <a id="Buton" class="btn btn-success" href="/Users/Show/@user.Id">Afisare user</a>
+        }
+   
+        </div>
+
+        <br />
+        <br />
+}
